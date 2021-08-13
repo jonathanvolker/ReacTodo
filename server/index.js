@@ -20,7 +20,7 @@ app.use(express.json());//req.body
 
      //ROUTES//
 
-//crete todosServer
+//crete todos
 app.post("/todos",async(req,res)=>{
     try {
         console.log(req.body)

@@ -67,12 +67,12 @@ const ListTodos = () => {
                     <td>Moe</td>
                     <td>mary@example.com</td>
                 </tr>*/}
-                    {todos.map(t => (
-                        <tr key={t.todo_id}>
-                            <td>{t.description} </td>
-                             <td> <EditTodo/> </td>
+                    {todos.map(todo => (
+                        <tr key={todo.todo_id}>
+                            <td>{todo.description} </td>
+                             <td> <EditTodo todo={todo} /> </td>
                             <button className="btn btn-danger"
-                                    onClick={() =>deleteTodo(t.todo_id)}>Eliminar</button>
+                                    onClick={() =>deleteTodo(todo.todo_id)}>Eliminar</button>
                         </tr>
 
                     ))}
