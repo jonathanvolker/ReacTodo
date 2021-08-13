@@ -10,10 +10,12 @@ const ListTodos = () => {
        const deleteTodo =  await fetch(`http://localhost:3001/todos/${id}`,
         {
             method:"DELETE",
-            headers:{"Content-Type": "application/json"},
+           // headers:{"Content-Type": "application/json"},
             //body:JSON.stringify(body)
         });
-        console.log(deleteTodo);
+
+        setTodos(todos.filter(t => t.todo_id !== id))
+       // console.log(deleteTodo);
         //window.location="/";
     } catch (err) {
         console.log(err.message,"no annda")
@@ -23,14 +25,13 @@ const ListTodos = () => {
 
   const getTodos = async() => {
     try {
-
-
         const response = await fetch("http://localhost:3001/todos")
         const jsonData = await response.json();
         
         //console.log(jsonData)
         setTodos(jsonData)
-    } catch (err) {
+    } 
+    catch (err) {
         console.log(err.message)
     }
   }
