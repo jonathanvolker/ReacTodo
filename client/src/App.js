@@ -1,7 +1,8 @@
 import React from 'react';
 import InputTodo from './components/InputTodo';
 import ListTodos from './components/ListTodos';
-import { Route, Link } from "react-router-dom";
+import Inicio from './components/Inicio';
+import {BrowserRouter as  Router,Route,Switch, Link } from "react-router-dom";
 
 function App() {
  
@@ -10,9 +11,22 @@ function App() {
   return (
 
   <>
-   <InputTodo/>
-   <ListTodos/>
-   
+    <Router>
+      
+    <Switch>
+
+          <Route path="/list">
+            <InputTodo />
+            <ListTodos />
+          </Route>
+          <Route path="/">
+            <Inicio/>
+          </Route>
+        </Switch>
+      
+      
+      
+       </Router>
   </>
   );
 }
