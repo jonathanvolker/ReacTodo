@@ -15,8 +15,9 @@ const EditTodo = ({todo}) => {
                 headers:{"Content-Type": "application/json"},
                 body:JSON.stringify(body)
             })
-
-            console.log(response)
+            //refresco la pag para ver las lista
+            window.location="/";
+            //console.log(response)
         } catch (err) {
             console.error(err.message)
         }
@@ -27,43 +28,49 @@ const EditTodo = ({todo}) => {
     return (
         <>
           <button type="button" 
-                  class="btn btn-warning" 
+                  className="btn btn-warning" 
                   data-toggle="modal" 
                   data-target={`#id${todo.todo_id}`}>  Editar
           </button>
 
             {/* aca tomo el dato precargado en el input y seteamos que sea el correspondiente
             */}
-        <div class="modal" 
-             id= {`id${todo.todo_id}`} >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                   <div class="modal-header">
-                        <h4 class="modal-title">Editar Tarea</h4>
+        <div className="modal" 
+             id= {`id${todo.todo_id}`}
+             onClick={() =>setDescription(todo.description) } 
+             >
+            <div className="modal-dialog">
+                <div className="modal-content">
+                   <div className="modal-header">
+                        <h4 className="modal-title">Editar Tarea</h4>
                         <button type="button" 
-                                class="close" 
-                                data-dismiss="modal">
+                                className="close" 
+                                data-dismiss="modal"
+                                onClick= {() =>{setDescription(todo.description)}}
+                        >
                                 &times;
                         </button>
                     </div>  
 
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <input type="text" 
-                               class="form-control" 
+                               className="form-control" 
                                value={description} 
                                onChange={e => setDescription(e.target.value)}
-                               onclick={e => {editDescription(e) }} />
+                              />
                     </div>
 
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                         <button type="button" 
-                                class="btn btn-warning" 
-                                data-dismiss="modal">Editar</button>
+                                className="btn btn-warning" 
+                                data-dismiss="modal"
+                                onClick={e => {editDescription(e) }} >Editar</button>
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                         <button type="button" 
-                                class="btn btn-danger"  
-                                data-dismiss="modal">Close</button>
+                                className="btn btn-danger"  
+                                data-dismiss="modal"
+                                onClick={() =>setDescription(todo.description) }>Close</button>
                     </div>
                 </div>
             </div>

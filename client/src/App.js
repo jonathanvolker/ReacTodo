@@ -1,7 +1,7 @@
-import React,{Fragment} from 'react';
+import React from 'react';
 import InputTodo from './components/InputTodo';
 import ListTodos from './components/ListTodos';
-
+import { Route, Link } from "react-router-dom";
 
 function App() {
  
@@ -9,12 +9,11 @@ function App() {
  
   return (
 
-  <Fragment>
-
-      <InputTodo/>
-      <ListTodos/>
+  <>
+   <InputTodo/>
+   <ListTodos/>
    
-  </Fragment>
+  </>
   );
 }
 

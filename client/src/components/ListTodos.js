@@ -11,15 +11,14 @@ const ListTodos = () => {
        const deleteTodo =  await fetch(`http://localhost:3001/todos/${id}`,
         {
             method:"DELETE",
-           // headers:{"Content-Type": "application/json"},
-            //body:JSON.stringify(body)
+          
         });
 
         setTodos(todos.filter(t => t.todo_id !== id))
        // console.log(deleteTodo);
-        //window.location="/";
+      
     } catch (err) {
-        console.log(err.message,"no annda")
+        console.log(err.message,"no anda el map listado")
     }
   }
 
@@ -56,17 +55,6 @@ const ListTodos = () => {
                 </tr>
                 </thead>
                 <tbody>
-
-                {/*<tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>*/}
                     {todos.map(todo => (
                         <tr key={todo.todo_id}>
                             <td>{todo.description} </td>
