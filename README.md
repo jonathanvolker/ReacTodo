@@ -1,10 +1,27 @@
-# ReacTodo
+# React TODO App --
 
+FrontEnd: React / / Bootstrap
 
-ReacTodo es una web app diseñada para listar tares, agregarlas a favoritos o eliminarlas.
+BackEnd: Node JS / Express / Sequelize 
 
-Usando React y y PostgreSQL.
+DataBase: Postgres
 
-cd server => npm install => npm start
+### Objective
 
-cd client => npm install => npm start
+- Apply best practices
+- GitHub Organization workflow
+- 
+## App Topic
+
+The main reason of this App, its allow users archive your activities.
+
+#### Technologies applied:
+
+- [ ] React
+- [ ] Bootstrap
+- [ ] HTML / CSS
+- [ ] NodeJS
+- [ ] Express
+- [ ] Sequelize
+- [ ] Postgres
+
